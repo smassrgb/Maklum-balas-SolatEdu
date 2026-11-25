@@ -1,6 +1,22 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar,
+  .se-jf-wrapper *::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
   .se-jf-wrapper {
     --se-navy: #102C40;
     --se-navy-mid: #1E4968;
@@ -23,11 +39,14 @@
     padding: 4px;
     box-sizing: border-box;
     line-height: 1.5;
+    overflow-x: hidden;
   }
 
   .se-jf-wrapper * {
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 
   .se-jf-wrapper input.se-state-ctrl {
@@ -41,10 +60,11 @@
     border: 3px solid var(--se-navy);
     border-bottom-width: 8px;
     border-radius: 26px;
-    padding: clamp(16px, 2.4vw, 26px);
+    padding: clamp(14px, 2.4vw, 26px);
     box-shadow: 0 18px 40px rgba(16, 44, 64, 0.14);
     overflow: hidden;
     position: relative;
+    width: 100%;
   }
 
   .se-title-font {
@@ -133,6 +153,7 @@
     display: flex;
     align-items: center;
     gap: 14px;
+    min-width: 0;
   }
   .se-logo-box {
     width: 50px;
@@ -148,7 +169,7 @@
     box-shadow: 3px 3px 0px var(--se-coral);
   }
 
-  /* BAR STATUS GOOGLE SHEETS BERSIH (TANPA BUTANG SOUND) */
+  /* BAR STATUS GOOGLE SHEETS BERSIH */
   .se-top-bar {
     background: var(--se-white);
     border: 2.5px solid var(--se-navy);
@@ -170,6 +191,7 @@
     border-radius: 50%;
     background: var(--se-green);
     display: inline-block;
+    flex-shrink: 0;
     box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.22);
     animation: sePulse 2s infinite;
   }
@@ -198,6 +220,9 @@
     text-align: center;
     transition: transform 0.14s ease, box-shadow 0.14s ease, background-color 0.2s ease, color 0.2s ease;
     user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .se-nav-tab:hover {
     transform: translate(-1px, -1px);
@@ -272,6 +297,7 @@
     cursor: pointer;
     transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.2s ease;
     user-select: none;
+    min-width: 0;
   }
   .se-cat-card:hover {
     transform: translate(-2px, -3px);
@@ -309,7 +335,7 @@
     border: 2.5px solid var(--se-navy);
     box-shadow: 5px 5px 0px var(--se-navy);
     border-radius: 22px;
-    padding: clamp(18px, 2.5vw, 26px);
+    padding: clamp(16px, 2.5vw, 26px);
     display: none;
     animation: seFadeIn 0.25s ease;
   }
@@ -357,7 +383,7 @@
   }
   .se-textarea {
     min-height: 120px;
-    resize: vertical;
+    resize: none;
   }
 
   /* PENARAFAN BINTANG & BUTANG PILIHAN PANTAS */
@@ -452,15 +478,14 @@
     padding: 16px;
     margin-top: 14px;
     display: none;
+    word-break: break-word;
   }
   .se-preview-card.active {
     display: block;
     animation: seFadeIn 0.25s ease;
   }
 
-  /* =========================================================================
-     PAPARAN REKOD AWAM GAYA NEO-BENTO (INSPIRASI KOD TEMPLAT ANDA)
-  ========================================================================= */
+  /* PAPARAN REKOD AWAM GAYA NEO-BENTO */
   .se-wall-head {
     background-color: var(--se-navy);
     color: var(--se-white);
@@ -562,72 +587,12 @@
     gap: 10px;
     transition: transform 0.18s ease, box-shadow 0.18s ease;
     animation: seFadeIn 0.22s ease-out;
+    min-width: 0;
+    word-break: break-word;
   }
   .se-fb-card:hover {
     transform: translate(-2px, -2px);
     box-shadow: 6px 6px 0px var(--se-coral);
-  }
-  .se-fb-card.cat-pai  { border-top: 6px solid #2563EB; }
-  .se-fb-card.cat-ibu  { border-top: 6px solid #16A34A; }
-  .se-fb-card.cat-anon { border-top: 6px solid #9333EA; }
-
-  .se-card-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 8px;
-  }
-  .se-user-meta {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .se-ava {
-    width: 38px;
-    height: 38px;
-    border-radius: 12px;
-    background-color: var(--se-navy);
-    color: var(--se-white);
-    border: 2px solid var(--se-lime);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.15rem;
-    flex-shrink: 0;
-  }
-  .se-pill-role {
-    display: inline-block;
-    font-size: 0.64rem;
-    font-weight: 900;
-    padding: 2px 8px;
-    border-radius: 6px;
-    text-transform: uppercase;
-    margin-bottom: 2px;
-  }
-  .bg-pai  { background: #DBEAFE; color: #1E40AF; }
-  .bg-ibu  { background: #DCFCE7; color: #166534; }
-  .bg-anon { background: #F3E8FF; color: #6B21A8; }
-
-  .se-speech-box {
-    background-color: var(--se-bg);
-    border-left: 4px solid var(--se-coral);
-    border-radius: 10px;
-    padding: 10px 12px;
-    font-size: 0.82rem;
-    font-weight: 600;
-    line-height: 1.5;
-    color: #1E293B;
-  }
-
-  .se-card-foot {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.7rem;
-    color: var(--se-muted);
-    font-weight: 800;
-    border-top: 1.5px dashed #CBD5E1;
-    padding-top: 8px;
   }
 
   /* PAGINATION BAR NEO-BENTO */
@@ -707,7 +672,7 @@
     border-radius: 22px;
     width: 100%;
     max-width: 450px;
-    padding: 26px;
+    padding: 24px;
     position: relative;
     transform: scale(0.94);
     transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -812,26 +777,132 @@
     transform: translateY(130%);
     opacity: 0;
     transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-    max-width: 340px;
+    max-width: calc(100vw - 40px);
   }
   .se-toast.show {
     transform: translateY(0);
     opacity: 1;
   }
 
-  /* RESPONSIF TELEFON PINTAR */
+  /* RESPONSIF TABLET & TELEFON PINTAR TANPA SCROLL */
   @media (max-width: 860px) {
     .se-cat-grid { grid-template-columns: repeat(2, 1fr); }
     .se-admin-grid { grid-template-columns: 1fr; }
-    .se-sidebar { flex-direction: row; overflow-x: auto; }
-    .se-side-link { white-space: nowrap; width: auto; }
+    .se-sidebar {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 6px;
+    }
+    .se-sidebar > div:first-child {
+      grid-column: 1 / -1;
+    }
+    .se-side-link {
+      white-space: normal;
+      width: 100%;
+      text-align: center;
+      padding: 9px 8px;
+      font-size: 0.76rem;
+    }
     .se-stats-row { grid-template-columns: repeat(2, 1fr); }
     .se-search-grid { grid-template-columns: 1fr 1fr; }
   }
+
   @media (max-width: 600px) {
-    .se-nav-bar { grid-template-columns: 1fr; }
-    .se-hero { flex-direction: column; text-align: center; }
-    .se-cat-grid, .se-grid-2, .se-cards-grid, .se-search-grid { grid-template-columns: 1fr; }
+    .se-jf-wrapper { padding: 2px; }
+    .se-jf-stage {
+      border-radius: 20px;
+      padding: 12px;
+      border-bottom-width: 6px;
+    }
+    .se-header {
+      padding: 14px;
+      gap: 10px;
+    }
+    .se-header > div:last-child {
+      width: 100%;
+      justify-content: space-between;
+    }
+    .se-top-bar {
+      padding: 8px 12px;
+      font-size: 0.74rem;
+    }
+    .se-nav-bar {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    .se-nav-tab {
+      padding: 11px 12px;
+      font-size: 0.82rem;
+    }
+    .se-hero {
+      flex-direction: column;
+      text-align: center;
+      padding: 16px 14px;
+      gap: 14px;
+    }
+    .se-hero > div:first-child {
+      flex: 1 1 auto !important;
+      width: 100%;
+    }
+    .se-cat-grid {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .se-grid-2,
+    .se-cards-grid,
+    .se-search-grid {
+      grid-template-columns: 1fr;
+    }
+    .se-form-box > div:last-of-type {
+      flex-direction: column;
+    }
+    .se-form-box > div:last-of-type > div {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    .se-form-box .se-jf-btn {
+      width: 100%;
+    }
+    .se-wall-head {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .se-wall-head .se-jf-btn {
+      width: 100%;
+    }
+    .se-flt-chip {
+      flex: 1 1 calc(50% - 7px);
+      text-align: center;
+      padding: 8px 8px;
+      font-size: 0.73rem;
+    }
+    .se-pagination-bar {
+      flex-direction: column;
+      align-items: stretch;
+      text-align: center;
+    }
+    .se-page-nums {
+      justify-content: center;
+    }
+    .se-sidebar {
+      grid-template-columns: 1fr;
+    }
+    .se-stats-row {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .se-stats-row .se-stat-card:first-child {
+      grid-column: 1 / -1;
+    }
+    .se-modal-box {
+      padding: 18px 16px;
+    }
+    .se-toast {
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      max-width: none;
+    }
   }
 </style>
 
@@ -1167,7 +1238,7 @@
       </div>
 
       <!-- =================================================================
-           VIEW 2: PAPARAN REKOD AWAM GAYA NEO-BENTO (INSPIRASI TEMPLAT ANDA)
+           VIEW 2: PAPARAN REKOD AWAM GAYA NEO-BENTO
       ================================================================= -->
       <div id="se-view-records" class="se-panel-view">
         <div class="se-wall-head">
@@ -1218,7 +1289,7 @@
       </div>
 
       <!-- =================================================================
-           VIEW 3: ADMIN DASHBOARD (AUTO GRANTED SELEPAS PENGESAHAN PASSWORD)
+           VIEW 3: ADMIN DASHBOARD
       ================================================================= -->
       <div id="se-view-admin" class="se-panel-view">
         <!-- SKRIN KUNCI JIKA BELUM LOGIN -->
@@ -1249,7 +1320,7 @@
               <button type="button" class="se-side-link" id="seAdminLogoutBtn" data-sound="warn" style="color:#FCA5A5; margin-top:6px;">🚪 Logout</button>
             </div>
 
-            <div style="background:var(--se-white); border:2.5px solid var(--se-navy); box-shadow:5px 5px 0px var(--se-navy); border-radius:20px; padding:18px;">
+            <div style="background:var(--se-white); border:2.5px solid var(--se-navy); box-shadow:5px 5px 0px var(--se-navy); border-radius:20px; padding:18px; min-width:0;">
               <!-- STATISTIK 5 KAD -->
               <div class="se-stats-row">
                 <div class="se-stat-card" style="background:var(--se-navy); color:var(--se-white);">
@@ -1298,7 +1369,7 @@
 
               <!-- SENARAI PENGURUSAN REKOD ADMIN (EDIT & PADAM) -->
               <div>
-                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px; margin-bottom:10px;">
                   <h4 class="se-title-font" style="margin:0; font-size:0.92rem;" id="seAdmListTitle">Senarai Rekod Maklum Balas</h4>
                   <span style="font-size:0.72rem; color:var(--se-muted); font-weight:800;">Klik Edit atau Padam untuk kemas kini Google Sheets</span>
                 </div>
@@ -1312,7 +1383,7 @@
     </div>
   </div>
 
-  <!-- MODAL ADMIN LOGIN (AUTO GRANTED ACCESS SELEPAS PENGESAHAN) -->
+  <!-- MODAL ADMIN LOGIN -->
   <div class="se-modal-overlay" id="seLoginModalOverlay">
     <div class="se-modal-box" id="seLoginModalBox">
       <button type="button" class="se-close-x" id="seCloseLoginModalBtn">&times;</button>
@@ -1398,9 +1469,6 @@
   <div class="se-toast" id="seToastBox"></div>
 </div>
 
-<!-- =========================================================================
-  ENJIN AUDIO PROFIL PELBAGAI & PENGURUSAN REKOD GOOGLE SHEETS
-========================================================================= -->
 <script>
 (function() {
   var DEFAULT_GAS_URL = 'https://script.google.com/macros/s/AKfycbx6wiLfhJq0YGnJ4LdiNcwAJu2lg6iRlmlMoWTC1BTyNVBosAFdK7-afQxsBWoeEynv/exec';
@@ -1504,7 +1572,6 @@
   }
   window.jfPlaySound = jfPlaySound;
 
-  // DATA REKOD & KEADAAN SISTEM
   var seedRecords = [
     {
       id: 'SE-20261125-001',
@@ -1605,20 +1672,6 @@
       .replace(/"/g, '&quot;');
   }
 
-  function cleanDateDisplay(rawDate) {
-    var s = String(rawDate || '').trim();
-    if (!s) return '';
-    if (s.indexOf('GMT') !== -1 || s.indexOf('Standard Time') !== -1 || s.indexOf('1899') !== -1) {
-      var d = new Date(s);
-      if (!isNaN(d.getTime()) && d.getFullYear() > 1970) {
-        var months = ['Jan', 'Feb', 'Mac', 'Apr', 'Mei', 'Jun', 'Jul', 'Ogos', 'Sep', 'Okt', 'Nov', 'Dis'];
-        return String(d.getDate()).padStart(2, '0') + ' ' + months[d.getMonth()] + ' ' + d.getFullYear();
-      }
-      return '';
-    }
-    return s;
-  }
-
   function formatNowMalay() {
     var now = new Date();
     var months = ['Jan', 'Feb', 'Mac', 'Apr', 'Mei', 'Jun', 'Jul', 'Ogos', 'Sep', 'Okt', 'Nov', 'Dis'];
@@ -1648,7 +1701,6 @@
     return str;
   }
 
-  // 3. PENYELARASAN DENGAN GOOGLE SHEETS (FETCH + IFRAME FORM BACKUP)
   function sendFormFallbackToGas(fields) {
     try {
       var tempForm = document.createElement('form');
@@ -1743,7 +1795,6 @@
 
     if (navCount) navCount.textContent = publicList.length;
 
-    // Kemas kini jumlah pada cip penapis Neo-Bento
     var cntPai = publicList.filter(function(r) { return r.kategori === 'Guru Pendidikan Islam'; }).length;
     var cntIbu = publicList.filter(function(r) { return r.kategori === 'Ibu Bapa'; }).length;
     var cntAnon = publicList.filter(function(r) { return r.kategori === 'Anonymous'; }).length;
@@ -1893,7 +1944,7 @@
 
       if (clearBtn) {
         clearBtn.addEventListener('click', function() {
-          jfPlaySound([440, 392]);
+          jfPlaySound('warn');
           if (cat === 'Anonymous') {
             namaEl.value = 'Anonymous';
             sekEl.value = 'Dirahsiakan';
@@ -1988,7 +2039,6 @@
           document.querySelectorAll('#seCategoryChipBar .se-flt-chip').forEach(function(c) {
             c.classList.toggle('active', c.getAttribute('data-cat') === 'ALL');
           });
-          // 3. Kosongkan borang selepas berjaya & bawa pengguna lihat rekod baharu
           if (cat === 'Anonymous') {
             namaEl.value = 'Anonymous';
             sekEl.value = 'Dirahsiakan';
@@ -2148,8 +2198,8 @@
 
     listWrap.innerHTML = listToShow.map(function(r) {
       return (
-        '<div style="background:var(--se-bg); border:2px solid var(--se-navy); box-shadow:3px 3px 0px var(--se-navy); border-radius:14px; padding:13px; display:flex; justify-content:space-between; align-items:flex-start; gap:12px; flex-wrap:wrap;">' +
-          '<div style="flex:1 1 260px;">' +
+        '<div style="background:var(--se-bg); border:2px solid var(--se-navy); box-shadow:3px 3px 0px var(--se-navy); border-radius:14px; padding:13px; display:flex; justify-content:space-between; align-items:flex-start; gap:12px; flex-wrap:wrap; word-break:break-word;">' +
+          '<div style="flex:1 1 220px; min-width:0;">' +
             '<div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:4px;">' +
               '<span class="se-badge">' + escapeHtml(r.kategori) + '</span>' +
               '<strong>' + escapeHtml(r.nama) + '</strong>' +
@@ -2174,7 +2224,6 @@
   }
 
   function bindEvents() {
-    // Bunyi automatik pada semua elemen interaktif tanpa butang sound
     document.getElementById('seRootApp').addEventListener('pointerdown', function(e) {
       var target = e.target.closest('[data-sound], .se-jf-btn, .se-nav-tab, .se-cat-card, .se-side-link, .se-page-btn, .se-flt-chip');
       if (!target) return;
@@ -2182,7 +2231,6 @@
       jfPlaySound(sProfile);
     });
 
-    // Cip penapis kategori Neo-Bento
     document.getElementById('seCategoryChipBar').addEventListener('click', function(e) {
       var chip = e.target.closest('.se-flt-chip');
       if (!chip) return;
@@ -2195,7 +2243,6 @@
       renderPublicRecords();
     });
 
-    // Butang buka Login Modal
     document.getElementById('seHeaderAdminBtn').addEventListener('click', openLoginModal);
     document.getElementById('seCardSayaSendiri').addEventListener('click', openLoginModal);
     document.getElementById('seOpenLoginFromTabBtn').addEventListener('click', openLoginModal);
@@ -2210,7 +2257,6 @@
       }
     });
 
-    // Show/Hide Password
     var passToggle = document.getElementById('seTogglePassVisBtn');
     var passInput = document.getElementById('seAdminPassInput');
     passToggle.addEventListener('click', function() {
@@ -2219,7 +2265,6 @@
       passToggle.textContent = isPwd ? '🙈 Hide' : '👁️ Show';
     });
 
-    // Logout Admin
     document.getElementById('seAdminLogoutBtn').addEventListener('click', function() {
       adminToken = '';
       try { sessionStorage.removeItem(STORAGE_TOKEN_KEY); } catch (e) {}
@@ -2228,7 +2273,6 @@
       showToast('👋 Anda telah log keluar daripada Mod Admin.');
     });
 
-    // Sidebar Admin Navigation
     document.querySelectorAll('.se-side-link[data-adm-view]').forEach(function(btn) {
       btn.addEventListener('click', function() {
         document.querySelectorAll('.se-side-link').forEach(function(b) { b.classList.remove('active'); });
@@ -2238,7 +2282,6 @@
       });
     });
 
-    // Simpan Rekod Peribadi "Saya Sendiri"
     document.getElementById('sePrivSaveBtn').addEventListener('click', function() {
       var nama = (document.getElementById('sePrivNama').value || '').trim() || 'Pemilik SolatEdu';
       var sek = (document.getElementById('sePrivSekolah').value || '').trim() || 'SolatEdu HQ';
@@ -2283,7 +2326,6 @@
       showToast('🔐 Catatan peribadi "Saya Sendiri" berjaya disimpan!');
     });
 
-    // Settings URL
     document.getElementById('seSaveGasUrlBtn').addEventListener('click', function() {
       var val = (document.getElementById('seGasUrlInput').value || '').trim();
       if (val) {
@@ -2293,7 +2335,6 @@
       }
     });
 
-    // Edit & Delete Delegated Events dalam Admin List
     document.getElementById('seAdminRecordsList').addEventListener('click', function(e) {
       var editBtn = e.target.closest('.se-adm-edit-btn');
       var delBtn = e.target.closest('.se-adm-del-btn');
@@ -2314,7 +2355,6 @@
       }
     });
 
-    // Modal Edit Actions
     document.getElementById('seCloseEditModalBtn').addEventListener('click', function() {
       document.getElementById('seEditModalOverlay').classList.remove('open');
     });
@@ -2346,7 +2386,6 @@
       showToast('✅ Rekod berjaya dikemas kini!');
     });
 
-    // Modal Delete Actions
     document.getElementById('seCancelDeleteBtn').addEventListener('click', function() {
       document.getElementById('seDeleteModalOverlay').classList.remove('open');
     });
@@ -2369,7 +2408,6 @@
       showToast('🗑️ Rekod telah dipadam.');
     });
 
-    // Search, Filter & Pagination Events
     document.getElementById('seSearchNameInput').addEventListener('input', function() {
       currentPage = 1;
       renderPublicRecords();
