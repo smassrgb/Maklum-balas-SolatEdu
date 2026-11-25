@@ -54,14 +54,18 @@
   }
 
   .se-jf-stage {
-    background-color: var(--se-bg);
-    background-image: radial-gradient(#CBD5E1 1px, transparent 1px);
-    background-size: 18px 18px;
-    border: 3px solid var(--se-navy);
-    border-bottom-width: 8px;
-    border-radius: 26px;
-    padding: clamp(14px, 2.4vw, 26px);
-    box-shadow: 0 18px 40px rgba(16, 44, 64, 0.14);
+    background-color: #EEF4F8;
+    background-image:
+      radial-gradient(circle at 6% 4%, rgba(219, 255, 0, 0.38) 0%, transparent 34%),
+      radial-gradient(circle at 94% 14%, rgba(56, 189, 248, 0.18) 0%, transparent 36%),
+      radial-gradient(circle at 86% 94%, rgba(254, 80, 16, 0.14) 0%, transparent 38%),
+      radial-gradient(#B8C7D9 1.25px, transparent 1.25px);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 18px 18px;
+    border: 3.5px solid var(--se-navy);
+    border-bottom-width: 10px;
+    border-radius: 30px;
+    padding: clamp(14px, 2.5vw, 28px);
+    box-shadow: 0 24px 54px rgba(8, 29, 43, 0.20), inset 0 2px 0 rgba(255, 255, 255, 0.9);
     overflow: hidden;
     position: relative;
     width: 100%;
@@ -72,26 +76,28 @@
     letter-spacing: -0.02em;
   }
 
-  /* BUTANG INTERAKTIF NEO-BENTO */
+  /* BUTANG INTERAKTIF NEO-BENTO PREMIUM */
   .se-jf-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
     padding: 11px 18px;
-    border-radius: 13px;
+    border-radius: 14px;
     font-weight: 800;
     font-size: 0.84rem;
     cursor: pointer;
     border: 2.5px solid var(--se-navy);
-    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.18s ease, color 0.18s ease;
+    transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.18s ease, background-color 0.18s ease, color 0.18s ease;
     user-select: none;
     text-decoration: none;
     min-height: 42px;
+    position: relative;
+    overflow: hidden;
   }
   .se-jf-btn:hover {
-    transform: translate(-1px, -2px);
-    box-shadow: 4px 4px 0px var(--se-navy);
+    transform: translate(-2px, -3px);
+    box-shadow: 5px 5px 0px var(--se-navy);
   }
   .se-jf-btn:active {
     transform: translate(2px, 2px);
@@ -99,19 +105,19 @@
   }
 
   .se-btn-lime {
-    background: var(--se-lime);
+    background: linear-gradient(180deg, #E8FF4D 0%, #DBFF00 55%, #C6E800 100%);
     color: var(--se-navy);
-    box-shadow: 3px 3px 0px var(--se-navy);
+    box-shadow: 3px 3px 0px var(--se-navy), inset 0 1.5px 0 rgba(255, 255, 255, 0.85);
   }
   .se-btn-navy {
-    background: linear-gradient(135deg, var(--se-navy-mid) 0%, var(--se-navy) 100%);
+    background: linear-gradient(135deg, #255A80 0%, var(--se-navy) 100%);
     color: var(--se-white);
-    box-shadow: 3px 3px 0px var(--se-coral);
+    box-shadow: 3px 3px 0px var(--se-coral), inset 0 1px 0 rgba(255, 255, 255, 0.25);
   }
   .se-btn-outline {
-    background: var(--se-white);
+    background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
     color: var(--se-navy);
-    box-shadow: 2px 2px 0px var(--se-navy);
+    box-shadow: 3px 3px 0px var(--se-navy);
   }
   .se-btn-outline:hover {
     background: var(--se-soft-blue);
@@ -120,6 +126,7 @@
     background: #FEE2E2;
     color: #991B1B;
     border-color: #991B1B;
+    box-shadow: 2px 2px 0px #7F1D1D;
   }
   .se-btn-danger:hover {
     background: var(--se-red);
@@ -129,15 +136,40 @@
     padding: 7px 13px;
     font-size: 0.78rem;
     min-height: 34px;
-    border-radius: 10px;
+    border-radius: 11px;
   }
 
-  /* HEADER PREMIUM */
+  /* LENCANA STATUS MOD ADMIN (MERAH BILA TUTUP, HIJAU BILA BUKA) */
+  .se-admin-badge-pill {
+    padding: 6px 13px;
+    border-radius: 99px;
+    font-size: 0.74rem;
+    font-weight: 900;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.25s ease;
+  }
+  .se-admin-badge-closed {
+    background: linear-gradient(180deg, #FFF1F2 0%, #FFE4E6 100%);
+    color: #DC2626;
+    border: 2px solid #EF4444;
+    box-shadow: 2px 2px 0px #7F1D1D;
+  }
+  .se-admin-badge-open {
+    background: linear-gradient(180deg, #F0FDF4 0%, #DCFCE7 100%);
+    color: #15803D;
+    border: 2px solid #22C55E;
+    box-shadow: 2px 2px 0px #14532D;
+  }
+
+  /* HEADER PREMIUM BERLAPIS */
   .se-header {
-    background: linear-gradient(135deg, var(--se-dark) 0%, var(--se-navy) 60%, var(--se-navy-mid) 100%);
+    background: linear-gradient(135deg, #05131D 0%, #0F2D42 50%, #1F5478 100%);
     color: var(--se-white);
-    border: 2.5px solid var(--se-navy);
-    border-radius: 20px;
+    border: 3px solid var(--se-navy);
+    border-bottom-width: 6px;
+    border-radius: 24px;
     padding: 18px 22px;
     display: flex;
     flex-wrap: wrap;
@@ -145,35 +177,63 @@
     justify-content: space-between;
     gap: 14px;
     margin-bottom: 14px;
-    box-shadow: 5px 5px 0px var(--se-navy);
+    box-shadow: 5px 5px 0px var(--se-navy), inset 0 1px 0 rgba(255, 255, 255, 0.18);
     position: relative;
     overflow: hidden;
+  }
+  .se-header::before {
+    content: "";
+    position: absolute;
+    bottom: -40px;
+    left: 28%;
+    width: 180px;
+    height: 110px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(254, 80, 16, 0.22) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .se-header::after {
+    content: "";
+    position: absolute;
+    top: -45px;
+    right: -35px;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(219, 255, 0, 0.28) 0%, transparent 70%);
+    pointer-events: none;
   }
   .se-brand {
     display: flex;
     align-items: center;
     gap: 14px;
     min-width: 0;
+    position: relative;
+    z-index: 1;
   }
   .se-logo-box {
-    width: 50px;
-    height: 50px;
+    width: 54px;
+    height: 54px;
     background: var(--se-lime);
     color: var(--se-navy);
-    border: 2px solid var(--se-navy);
-    border-radius: 15px;
+    border: 2.5px solid var(--se-navy);
+    border-radius: 17px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
     box-shadow: 3px 3px 0px var(--se-coral);
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .se-brand:hover .se-logo-box {
+    transform: rotate(-5deg) scale(1.06);
   }
 
   /* BAR STATUS GOOGLE SHEETS BERSIH */
   .se-top-bar {
-    background: var(--se-white);
+    background: linear-gradient(90deg, #FFFFFF 0%, #F8FAFC 100%);
     border: 2.5px solid var(--se-navy);
-    border-radius: 15px;
+    border-radius: 16px;
     padding: 9px 15px;
     display: flex;
     flex-wrap: wrap;
@@ -197,49 +257,51 @@
   }
   @keyframes sePulse {
     0%, 100% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.2); opacity: 0.75; }
+    50% { transform: scale(1.22); opacity: 0.75; }
   }
 
   /* TAB NAVIGASI UTAMA NEO-BENTO */
   .se-nav-bar {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    gap: 11px;
     margin-bottom: 18px;
   }
   .se-nav-tab {
-    background-color: var(--se-white);
+    background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
     color: var(--se-navy);
     border: 2.5px solid var(--se-navy);
     box-shadow: 4px 4px 0px var(--se-navy);
-    border-radius: 15px;
-    padding: 12px 14px;
+    border-radius: 16px;
+    padding: 13px 14px;
     font-weight: 900;
     font-size: 0.84rem;
     cursor: pointer;
     text-align: center;
-    transition: transform 0.14s ease, box-shadow 0.14s ease, background-color 0.2s ease, color 0.2s ease;
+    transition: transform 0.16s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.16s ease, background 0.2s ease, color 0.2s ease;
     user-select: none;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 6px;
   }
   .se-nav-tab:hover {
-    transform: translate(-1px, -1px);
+    transform: translate(-1px, -2px);
     background: #FCFFE8;
   }
 
   #se-tab-home:checked ~ .se-nav-bar label[for="se-tab-home"],
   #se-tab-records:checked ~ .se-nav-bar label[for="se-tab-records"],
   #se-tab-admin:checked ~ .se-nav-bar label[for="se-tab-admin"] {
-    background: var(--se-navy);
+    background: linear-gradient(135deg, #0D2536 0%, #1E4968 100%);
     color: var(--se-lime);
     box-shadow: 4px 4px 0px var(--se-coral);
+    transform: translate(-1px, -1px);
   }
 
   .se-panel-view {
     display: none;
-    animation: seFadeIn 0.25s ease-out;
+    animation: seFadeIn 0.28s cubic-bezier(0.22, 1, 0.36, 1);
   }
   #se-tab-home:checked ~ .se-views-wrap #se-view-home,
   #se-tab-records:checked ~ .se-views-wrap #se-view-records,
@@ -248,22 +310,46 @@
   }
 
   @keyframes seFadeIn {
-    from { opacity: 0; transform: translateY(8px) scale(0.99); }
+    from { opacity: 0; transform: translateY(10px) scale(0.985); }
     to { opacity: 1; transform: translateY(0) scale(1); }
   }
 
-  /* HERO SECTION */
+  /* HERO SECTION MEWAH */
   .se-hero {
-    background: linear-gradient(135deg, var(--se-white) 0%, #E3F1FA 60%, #F4FFBD 100%);
-    border: 2.5px solid var(--se-navy);
-    box-shadow: 5px 5px 0px var(--se-navy);
-    border-radius: 22px;
+    background: linear-gradient(135deg, #FFFFFF 0%, #E0F2FE 52%, #EEFF9E 100%);
+    border: 3px solid var(--se-navy);
+    border-bottom-width: 6px;
+    box-shadow: 5px 5px 0px var(--se-navy), inset 0 2px 0 rgba(255, 255, 255, 0.95);
+    border-radius: 24px;
     padding: clamp(18px, 2.8vw, 28px);
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
     margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .se-hero::after {
+    content: "";
+    position: absolute;
+    right: -30px;
+    bottom: -30px;
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(254, 80, 16, 0.14) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .se-hero-art {
+    animation: seFloatArt 4.2s ease-in-out infinite;
+    filter: drop-shadow(0 10px 16px rgba(16, 44, 64, 0.18));
+    position: relative;
+    z-index: 1;
+  }
+  @keyframes seFloatArt {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
   }
   .se-pill {
     display: inline-block;
@@ -276,9 +362,10 @@
     text-transform: uppercase;
     margin-bottom: 10px;
     letter-spacing: 0.04em;
+    box-shadow: 2.5px 2.5px 0px var(--se-coral);
   }
 
-  /* 4 KAD KATEGORI PENGGUNA */
+  /* 4 KAD KATEGORI PENGGUNA DENGAN JALUR WARNA IDENTITI */
   .se-cat-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -286,35 +373,47 @@
     margin-bottom: 18px;
   }
   .se-cat-card {
-    background: var(--se-white);
+    background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
     border: 2.5px solid var(--se-navy);
+    border-top-width: 7px;
     box-shadow: 5px 5px 0px var(--se-navy);
-    border-radius: 20px;
+    border-radius: 22px;
     padding: 18px 15px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
-    transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.2s ease;
+    transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.22s ease, background 0.22s ease;
     user-select: none;
     min-width: 0;
   }
+  .se-cat-grid > :nth-child(1) { border-top-color: #16A34A; }
+  .se-cat-grid > :nth-child(2) { border-top-color: #2563EB; }
+  .se-cat-grid > :nth-child(3) { border-top-color: #9333EA; }
+  .se-cat-grid > :nth-child(4) { border-top-color: #FE5010; }
+
   .se-cat-card:hover {
-    transform: translate(-2px, -3px);
-    background: #FCFFE8;
-    box-shadow: 6px 6px 0px var(--se-coral);
+    transform: translate(-2px, -5px);
+    background: linear-gradient(180deg, #FFFFFF 0%, #F9FFE0 100%);
+    box-shadow: 7px 7px 0px var(--se-coral);
+  }
+  .se-cat-card:hover .se-cat-icon {
+    transform: scale(1.1) rotate(-5deg);
+    background: var(--se-lime);
   }
   .se-cat-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 14px;
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
     background: var(--se-soft-blue);
     border: 2px solid var(--se-navy);
+    box-shadow: 2px 2px 0px var(--se-navy);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.4rem;
+    font-size: 1.45rem;
     margin-bottom: 12px;
+    transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease;
   }
   .se-badge {
     display: inline-block;
@@ -331,10 +430,11 @@
 
   /* BORANG MAKLUM BALAS INTERAKTIF */
   .se-form-box {
-    background: var(--se-white);
-    border: 2.5px solid var(--se-navy);
-    box-shadow: 5px 5px 0px var(--se-navy);
-    border-radius: 22px;
+    background: linear-gradient(180deg, #FFFFFF 0%, #FAFCFF 100%);
+    border: 3px solid var(--se-navy);
+    border-bottom-width: 6px;
+    box-shadow: 6px 6px 0px var(--se-navy);
+    border-radius: 24px;
     padding: clamp(16px, 2.5vw, 26px);
     display: none;
     animation: seFadeIn 0.25s ease;
@@ -573,22 +673,43 @@
   .se-cards-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
+    gap: 15px;
   }
   .se-fb-card {
-    background-color: var(--se-white);
+    background: linear-gradient(180deg, #FFFFFF 0%, #F8FBFF 100%);
     border: 2.5px solid var(--se-navy);
+    border-top-width: 7px;
     box-shadow: 5px 5px 0px var(--se-navy);
-    border-radius: 18px;
-    padding: 15px;
+    border-radius: 20px;
+    padding: 16px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 10px;
-    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.22s ease;
     animation: seFadeIn 0.22s ease-out;
     min-width: 0;
     word-break: break-word;
+  }
+  .se-fb-card:hover {
+    transform: translate(-2px, -4px);
+    box-shadow: 7px 7px 0px var(--se-coral);
+  }
+  .se-fb-card.cat-pai  { border-top-color: #2563EB; }
+  .se-fb-card.cat-ibu  { border-top-color: #16A34A; }
+  .se-fb-card.cat-anon { border-top-color: #9333EA; }
+
+  .se-fb-quote {
+    background: linear-gradient(135deg, #F1F5F9 0%, #F8FAFC 100%);
+    border: 1.5px solid #E2E8F0;
+    border-left: 4.5px solid var(--se-coral);
+    border-radius: 12px;
+    padding: 11px 13px;
+    margin: 0 0 10px 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #1E293B;
+    line-height: 1.55;
   }
   .se-fb-card:hover {
     transform: translate(-2px, -2px);
@@ -907,7 +1028,7 @@
 </style>
 
 <div class="se-jf-wrapper" id="seRootApp">
-  <!-- AUDIO TERSEMBUNYI MESRA JOTFORM (TIADA BUTANG SOUND DI UI) -->
+  <!-- AUDIO TERSEMBUNYI MESRA JOTFORM -->
   <div style="height: 0; overflow: hidden; margin: 0; padding: 0;" aria-hidden="true">
     <audio id="jfHiddenAudio" controls preload="auto" src="data:audio/wav;base64,UklGRl9vT19XQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YU9vT18AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIA="></audio>
   </div>
@@ -931,9 +1052,9 @@
         </div>
       </div>
 
-      <div style="display:flex; align-items:center; gap:8px;">
-        <span id="seAdminStatusBadge" style="display:none; background:rgba(219,255,0,0.18); color:var(--se-lime); border:1.5px solid var(--se-lime); padding:5px 11px; border-radius:99px; font-size:0.74rem; font-weight:900;">
-          ✅ Mod Admin Aktif
+      <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+        <span id="seAdminStatusBadge" class="se-admin-badge-pill se-admin-badge-closed">
+          🔴 Mod Admin Tutup
         </span>
         <button type="button" id="seHeaderAdminBtn" data-sound="openAdmin" class="se-jf-btn se-btn-lime se-btn-sm">
           🔒 Admin Login
@@ -941,14 +1062,14 @@
       </div>
     </div>
 
-    <!-- BAR STATUS GOOGLE SHEETS (BERSIH & KEMAS) -->
+    <!-- BAR STATUS GOOGLE SHEETS -->
     <div class="se-top-bar">
       <div style="display:flex; align-items:center; gap:8px;">
         <span class="se-dot-live" id="seSyncDot"></span>
         <span id="seSyncStatusText">Google Sheets Tersambung • Rekod Sedia</span>
       </div>
       <div style="display:flex; align-items:center; gap:8px;">
-        <button type="button" id="seSyncNowBtn" data-sound="tap" class="se-jf-btn se-btn-outline se-btn-sm" style="padding:4px 12px; min-height:28px; font-size:0.73rem;">
+        <button type="button" id="seSyncNowBtn" data-sound="sync" class="se-jf-btn se-btn-outline se-btn-sm" style="padding:4px 12px; min-height:28px; font-size:0.73rem;">
           🔄 Segerak Rekod
         </button>
       </div>
@@ -970,7 +1091,7 @@
     <div class="se-views-wrap">
 
       <!-- =================================================================
-           VIEW 1: PUBLIC FEEDBACK PORTAL (HOMEPAGE + 4 KATEGORI + BORANG)
+           VIEW 1: PUBLIC FEEDBACK PORTAL
       ================================================================= -->
       <div id="se-view-home" class="se-panel-view">
         <!-- HERO SECTION -->
@@ -985,7 +1106,7 @@
             </p>
           </div>
 
-          <div style="width:clamp(135px, 18vw, 185px); flex-shrink:0;" aria-hidden="true">
+          <div class="se-hero-art" style="width:clamp(135px, 18vw, 185px); flex-shrink:0;" aria-hidden="true">
             <svg viewBox="0 0 220 190" width="100%" height="auto" fill="none">
               <rect x="20" y="25" width="180" height="125" rx="18" fill="#102C40" stroke="#081D2B" stroke-width="4"/>
               <rect x="30" y="35" width="160" height="95" rx="10" fill="#DCEAF2"/>
@@ -999,7 +1120,7 @@
           </div>
         </div>
 
-        <!-- RADIO KATEGORI (PURE CSS SWITCH) -->
+        <!-- RADIO KATEGORI -->
         <input type="radio" name="se-cat-choice" id="se-cat-none" class="se-state-ctrl" checked>
         <input type="radio" name="se-cat-choice" id="se-cat-ibubapa" class="se-state-ctrl">
         <input type="radio" name="se-cat-choice" id="se-cat-guru" class="se-state-ctrl">
@@ -1029,7 +1150,7 @@
             <span class="se-badge">Pilih Kategori →</span>
           </label>
 
-          <label for="se-cat-anon" data-sound="lock" class="se-cat-card">
+          <label for="se-cat-anon" data-sound="roleAnon" class="se-cat-card">
             <div>
               <div class="se-cat-icon">🕵️</div>
               <h3 class="se-title-font" style="margin:0 0 6px 0; font-size:0.9rem;">ANONYMOUS</h3>
@@ -1059,7 +1180,7 @@
               <span class="se-badge">KATEGORI: IBU BAPA</span>
               <h3 class="se-title-font" style="margin:6px 0 0 0;">Borang Maklum Balas Ibu Bapa</h3>
             </div>
-            <label for="se-cat-none" data-sound="prev" class="se-jf-btn se-btn-outline se-btn-sm">← Kembali</label>
+            <label for="se-cat-none" data-sound="back" class="se-jf-btn se-btn-outline se-btn-sm">← Kembali</label>
           </div>
 
           <div class="se-grid-2">
@@ -1101,12 +1222,12 @@
 
           <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;">
             <div style="display:flex; gap:8px; flex-wrap:wrap;">
-              <label for="se-cat-none" data-sound="prev" class="se-jf-btn se-btn-outline">← Kembali</label>
-              <button type="button" data-sound="warn" class="se-jf-btn se-btn-outline se-btn-clear">🧹 Kosongkan Borang</button>
+              <label for="se-cat-none" data-sound="back" class="se-jf-btn se-btn-outline">← Kembali</label>
+              <button type="button" data-sound="clear" class="se-jf-btn se-btn-outline se-btn-clear">🧹 Kosongkan Borang</button>
             </div>
             <div style="display:flex; gap:8px; flex-wrap:wrap;">
-              <button type="button" data-sound="pop" class="se-jf-btn se-btn-navy se-btn-preview">👁️ Rekod Maklum Balas</button>
-              <button type="button" data-sound="success" class="se-jf-btn se-btn-lime se-btn-submit">🚀 Hantar Maklum Balas</button>
+              <button type="button" data-sound="preview" class="se-jf-btn se-btn-navy se-btn-preview">👁️ Rekod Maklum Balas</button>
+              <button type="button" data-sound="submit" class="se-jf-btn se-btn-lime se-btn-submit">🚀 Hantar Maklum Balas</button>
             </div>
           </div>
           <div class="se-preview-card"></div>
@@ -1119,7 +1240,7 @@
               <span class="se-badge">KATEGORI: GURU PENDIDIKAN ISLAM</span>
               <h3 class="se-title-font" style="margin:6px 0 0 0;">Borang Maklum Balas Guru PAI</h3>
             </div>
-            <label for="se-cat-none" data-sound="prev" class="se-jf-btn se-btn-outline se-btn-sm">← Kembali</label>
+            <label for="se-cat-none" data-sound="back" class="se-jf-btn se-btn-outline se-btn-sm">← Kembali</label>
           </div>
 
           <div class="se-grid-2">
@@ -1161,12 +1282,12 @@
 
           <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;">
             <div style="display:flex; gap:8px; flex-wrap:wrap;">
-              <label for="se-cat-none" data-sound="prev" class="se-jf-btn se-btn-outline">← Kembali</label>
-              <button type="button" data-sound="warn" class="se-jf-btn se-btn-outline se-btn-clear">🧹 Kosongkan Borang</button>
+              <label for="se-cat-none" data-sound="back" class="se-jf-btn se-btn-outline">← Kembali</label>
+              <button type="button" data-sound="clear" class="se-jf-btn se-btn-outline se-btn-clear">🧹 Kosongkan Borang</button>
             </div>
             <div style="display:flex; gap:8px; flex-wrap:wrap;">
-              <button type="button" data-sound="pop" class="se-jf-btn se-btn-navy se-btn-preview">👁️ Rekod Maklum Balas</button>
-              <button type="button" data-sound="success" class="se-jf-btn se-btn-lime se-btn-submit">🚀 Hantar Maklum Balas</button>
+              <button type="button" data-sound="preview" class="se-jf-btn se-btn-navy se-btn-preview">👁️ Rekod Maklum Balas</button>
+              <button type="button" data-sound="submit" class="se-jf-btn se-btn-lime se-btn-submit">🚀 Hantar Maklum Balas</button>
             </div>
           </div>
           <div class="se-preview-card"></div>
@@ -1179,7 +1300,7 @@
               <span class="se-badge" style="background:var(--se-navy); color:var(--se-lime);">KATEGORI: ANONYMOUS</span>
               <h3 class="se-title-font" style="margin:6px 0 0 0;">Borang Maklum Balas Tanpa Nama</h3>
             </div>
-            <label for="se-cat-none" data-sound="prev" class="se-jf-btn se-btn-outline se-btn-sm">← Kembali</label>
+            <label for="se-cat-none" data-sound="back" class="se-jf-btn se-btn-outline se-btn-sm">← Kembali</label>
           </div>
 
           <div style="background:#FEF9C3; border:2px solid #CA8A04; border-radius:12px; padding:10px 14px; font-size:0.8rem; font-weight:700; margin-bottom:12px;">
@@ -1225,12 +1346,12 @@
 
           <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;">
             <div style="display:flex; gap:8px; flex-wrap:wrap;">
-              <label for="se-cat-none" data-sound="prev" class="se-jf-btn se-btn-outline">← Kembali</label>
-              <button type="button" data-sound="warn" class="se-jf-btn se-btn-outline se-btn-clear">🧹 Kosongkan Borang</button>
+              <label for="se-cat-none" data-sound="back" class="se-jf-btn se-btn-outline">← Kembali</label>
+              <button type="button" data-sound="clear" class="se-jf-btn se-btn-outline se-btn-clear">🧹 Kosongkan Borang</button>
             </div>
             <div style="display:flex; gap:8px; flex-wrap:wrap;">
-              <button type="button" data-sound="pop" class="se-jf-btn se-btn-navy se-btn-preview">👁️ Rekod Maklum Balas</button>
-              <button type="button" data-sound="success" class="se-jf-btn se-btn-lime se-btn-submit">🚀 Hantar Maklum Balas</button>
+              <button type="button" data-sound="preview" class="se-jf-btn se-btn-navy se-btn-preview">👁️ Rekod Maklum Balas</button>
+              <button type="button" data-sound="submit" class="se-jf-btn se-btn-lime se-btn-submit">🚀 Hantar Maklum Balas</button>
             </div>
           </div>
           <div class="se-preview-card"></div>
@@ -1246,7 +1367,7 @@
             <h2 class="se-title-font" style="margin:0; font-size:1.15rem; font-weight:900;">💬 Rekod Maklum Balas Komuniti</h2>
             <span style="font-size:0.74rem; color:#CBD5E1; font-weight:600;">Susunan rekod terkini ke terawal • Dikemas kini secara langsung</span>
           </div>
-          <button type="button" id="seRefreshPublicBtn" data-sound="tap" class="se-jf-btn se-btn-lime se-btn-sm">
+          <button type="button" id="seRefreshPublicBtn" data-sound="sync" class="se-jf-btn se-btn-lime se-btn-sm">
             🔄 Muat Semula Sheet
           </button>
         </div>
@@ -1317,7 +1438,7 @@
               <button type="button" class="se-side-link" data-adm-view="Saya Sendiri" data-sound="filter">🔐 Maklum Balas Saya</button>
               <button type="button" class="se-side-link" data-adm-view="ALL" data-sound="fltAll">🗂️ Semua Maklum Balas</button>
               <button type="button" class="se-side-link" data-adm-view="settings" data-sound="tap">⚙️ Settings</button>
-              <button type="button" class="se-side-link" id="seAdminLogoutBtn" data-sound="warn" style="color:#FCA5A5; margin-top:6px;">🚪 Logout</button>
+              <button type="button" class="se-side-link" id="seAdminLogoutBtn" data-sound="logout" style="color:#FCA5A5; margin-top:6px;">🚪 Logout</button>
             </div>
 
             <div style="background:var(--se-white); border:2.5px solid var(--se-navy); box-shadow:5px 5px 0px var(--se-navy); border-radius:20px; padding:18px; min-width:0;">
@@ -1356,7 +1477,7 @@
                   <input type="text" id="sePrivSekolah" class="se-input" value="SolatEdu HQ" placeholder="Institusi / Projek...">
                 </div>
                 <textarea id="sePrivMsg" class="se-textarea" style="min-height:80px; margin-bottom:10px;" placeholder="Tulis catatan peribadi atau refleksi kajian SolatEdu di sini..."></textarea>
-                <button type="button" id="sePrivSaveBtn" data-sound="success" class="se-jf-btn se-btn-lime se-btn-sm">💾 Simpan Rekod Peribadi ke Google Sheets</button>
+                <button type="button" id="sePrivSaveBtn" data-sound="submit" class="se-jf-btn se-btn-lime se-btn-sm">💾 Simpan Rekod Peribadi ke Google Sheets</button>
               </div>
 
               <!-- SUB-PAPARAN: SETTINGS -->
@@ -1364,7 +1485,7 @@
                 <h3 class="se-title-font" style="margin:0 0 6px 0; font-size:0.95rem;">⚙️ Tetapan Sambungan Google Apps Script</h3>
                 <label class="se-label">Web App URL Google Sheets</label>
                 <input type="text" id="seGasUrlInput" class="se-input" value="https://script.google.com/macros/s/AKfycbx6wiLfhJq0YGnJ4LdiNcwAJu2lg6iRlmlMoWTC1BTyNVBosAFdK7-afQxsBWoeEynv/exec" style="margin-bottom:10px;">
-                <button type="button" id="seSaveGasUrlBtn" data-sound="success" class="se-jf-btn se-btn-navy se-btn-sm">💾 Simpan URL &amp; Segerak</button>
+                <button type="button" id="seSaveGasUrlBtn" data-sound="submit" class="se-jf-btn se-btn-navy se-btn-sm">💾 Simpan URL &amp; Segerak</button>
               </div>
 
               <!-- SENARAI PENGURUSAN REKOD ADMIN (EDIT & PADAM) -->
@@ -1386,7 +1507,7 @@
   <!-- MODAL ADMIN LOGIN -->
   <div class="se-modal-overlay" id="seLoginModalOverlay">
     <div class="se-modal-box" id="seLoginModalBox">
-      <button type="button" class="se-close-x" id="seCloseLoginModalBtn">&times;</button>
+      <button type="button" class="se-close-x" id="seCloseLoginModalBtn" data-sound="back">&times;</button>
       <div style="text-align:center; margin-bottom:16px;">
         <div style="width:54px; height:54px; background:var(--se-navy); color:var(--se-lime); border-radius:16px; display:inline-flex; align-items:center; justify-content:center; font-size:1.45rem; margin-bottom:8px;">🛡️</div>
         <h3 class="se-title-font" style="margin:0; font-size:1.22rem;">ADMIN ACCESS</h3>
@@ -1395,7 +1516,7 @@
 
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
         <label class="se-label" style="margin:0;">Password</label>
-        <button type="button" id="seTogglePassVisBtn" class="se-jf-btn se-btn-outline se-btn-sm" style="padding:3px 10px; min-height:28px; font-size:0.72rem;">👁️ Show</button>
+        <button type="button" id="seTogglePassVisBtn" data-sound="tap" class="se-jf-btn se-btn-outline se-btn-sm" style="padding:3px 10px; min-height:28px; font-size:0.72rem;">👁️ Show</button>
       </div>
 
       <div style="margin-bottom:12px;">
@@ -1407,8 +1528,8 @@
       </div>
 
       <div style="display:flex; gap:10px; justify-content:flex-end;">
-        <button type="button" id="seCancelLoginBtn" class="se-jf-btn se-btn-outline">Cancel</button>
-        <button type="button" id="seConfirmLoginBtn" class="se-jf-btn se-btn-lime">🔓 Login</button>
+        <button type="button" id="seCancelLoginBtn" data-sound="back" class="se-jf-btn se-btn-outline">Cancel</button>
+        <button type="button" id="seConfirmLoginBtn" data-sound="openAdmin" class="se-jf-btn se-btn-lime">🔓 Login</button>
       </div>
     </div>
   </div>
@@ -1416,7 +1537,7 @@
   <!-- MODAL EDIT REKOD ADMIN -->
   <div class="se-modal-overlay" id="seEditModalOverlay">
     <div class="se-modal-box" style="max-width:520px;">
-      <button type="button" class="se-close-x" id="seCloseEditModalBtn">&times;</button>
+      <button type="button" class="se-close-x" id="seCloseEditModalBtn" data-sound="back">&times;</button>
       <h3 class="se-title-font" style="margin:0 0 12px 0; font-size:1.12rem;">✏️ Sunting Rekod Maklum Balas</h3>
       <input type="hidden" id="seEditId">
       <div class="se-grid-2">
@@ -1443,8 +1564,8 @@
         <textarea id="seEditMsg" class="se-textarea"></textarea>
       </div>
       <div style="display:flex; gap:10px; justify-content:flex-end;">
-        <button type="button" id="seCancelEditBtn" class="se-jf-btn se-btn-outline">Batal</button>
-        <button type="button" id="seSaveEditBtn" class="se-jf-btn se-btn-lime">💾 Simpan Perubahan</button>
+        <button type="button" id="seCancelEditBtn" data-sound="back" class="se-jf-btn se-btn-outline">Batal</button>
+        <button type="button" id="seSaveEditBtn" data-sound="submit" class="se-jf-btn se-btn-lime">💾 Simpan Perubahan</button>
       </div>
     </div>
   </div>
@@ -1459,8 +1580,8 @@
       </p>
       <input type="hidden" id="seDeleteTargetId">
       <div style="display:flex; gap:10px; justify-content:center;">
-        <button type="button" id="seCancelDeleteBtn" class="se-jf-btn se-btn-outline">Batal</button>
-        <button type="button" id="seConfirmDeleteBtn" class="se-jf-btn se-btn-danger">🗑️ Ya, Padam</button>
+        <button type="button" id="seCancelDeleteBtn" data-sound="back" class="se-jf-btn se-btn-outline">Batal</button>
+        <button type="button" id="seConfirmDeleteBtn" data-sound="delete" class="se-jf-btn se-btn-danger">🗑️ Ya, Padam</button>
       </div>
     </div>
   </div>
@@ -1476,22 +1597,45 @@
   var STORAGE_GAS_KEY = 'solatedu_gas_url_v4';
   var STORAGE_TOKEN_KEY = 'solatedu_admin_token_v4';
 
+  // PROFIL BUNYI KONTEKSTUAL MENGIKUT SITUASI SETIAP BUTANG
   var JF_PROFILES = {
-    tap:        { notes: [659.25, 880.00],                 dur: 0.055, wave: 'sine',     vol: 0.45 },
-    tabForm:    { notes: [587.33, 880.00],                 dur: 0.065, wave: 'sine',     vol: 0.48 },
-    tabRecords: { notes: [659.25, 987.77],                 dur: 0.065, wave: 'triangle', vol: 0.48 },
-    openAdmin:  { notes: [523.25, 783.99, 1046.50, 1318.51], dur: 0.07, wave: 'sine',    vol: 0.52 },
-    rolePai:    { notes: [587.33, 880.00],                 dur: 0.06,  wave: 'sine',     vol: 0.48 },
-    roleIbu:    { notes: [659.25, 987.77],                 dur: 0.06,  wave: 'triangle', vol: 0.48 },
-    fltAll:     { notes: [523.25, 659.25, 783.99, 1046.50], dur: 0.06, wave: 'triangle', vol: 0.50 },
-    filter:     { notes: [698.46, 880.00],                 dur: 0.05,  wave: 'sine',     vol: 0.44 },
-    page:       { notes: [783.99, 1046.50],                dur: 0.05,  wave: 'sine',     vol: 0.44 },
-    next:       { notes: [523.25, 659.25, 783.99, 1046.50], dur: 0.065, wave: 'triangle', vol: 0.50 },
-    prev:       { notes: [783.99, 659.25, 523.25],         dur: 0.065, wave: 'triangle', vol: 0.46 },
-    pop:        { notes: [783.99, 1046.50],                dur: 0.05,  wave: 'sine',     vol: 0.46 },
-    lock:       { notes: [659.25, 493.88, 392.00],         dur: 0.075, wave: 'triangle', vol: 0.48 },
-    warn:       { notes: [659.25, 493.88, 349.23, 293.66], dur: 0.075, wave: 'sawtooth', vol: 0.36 },
-    success:    { notes: [523.25, 659.25, 783.99, 1046.50, 1318.51], dur: 0.07, wave: 'triangle', vol: 0.54 }
+    // Ketikan ringan UI umum
+    tap:        { notes: [783.99, 1046.50],                     dur: 0.045, wave: 'sine',     vol: 0.42 },
+    // Tukar tab navigasi utama
+    tabForm:    { notes: [523.25, 659.25, 783.99],              dur: 0.055, wave: 'sine',     vol: 0.46 },
+    tabRecords: { notes: [587.33, 739.99, 880.00],              dur: 0.055, wave: 'triangle', vol: 0.46 },
+    // Pilih kategori pengguna (Ibu Bapa, Guru PAI, Anonymous)
+    roleIbu:    { notes: [523.25, 659.25, 783.99],              dur: 0.055, wave: 'triangle', vol: 0.48 },
+    rolePai:    { notes: [587.33, 739.99, 880.00],              dur: 0.055, wave: 'sine',     vol: 0.48 },
+    roleAnon:   { notes: [440.00, 523.25, 659.25],              dur: 0.06,  wave: 'triangle', vol: 0.46 },
+    // Penarafan bintang & tag pantas
+    star:       { notes: [880.00, 1174.66, 1567.98],            dur: 0.045, wave: 'sine',     vol: 0.46 },
+    tag:        { notes: [698.46, 932.33],                      dur: 0.045, wave: 'triangle', vol: 0.42 },
+    // Segerak / Muat semula Sheet (bunyi berputar naik)
+    sync:       { notes: [440.00, 554.37, 659.25, 880.00],      dur: 0.05,  wave: 'sine',     vol: 0.45 },
+    // Penapis & Pagination
+    fltAll:     { notes: [523.25, 659.25, 783.99, 1046.50],     dur: 0.055, wave: 'triangle', vol: 0.48 },
+    filter:     { notes: [659.25, 880.00],                      dur: 0.048, wave: 'sine',     vol: 0.44 },
+    page:       { notes: [783.99, 987.77],                      dur: 0.045, wave: 'sine',     vol: 0.42 },
+    next:       { notes: [659.25, 880.00, 1046.50],             dur: 0.05,  wave: 'triangle', vol: 0.46 },
+    prev:       { notes: [880.00, 659.25, 523.25],              dur: 0.05,  wave: 'triangle', vol: 0.44 },
+    // Kembali / Batal (nada menurun lembut)
+    back:       { notes: [659.25, 523.25, 392.00],              dur: 0.055, wave: 'sine',     vol: 0.44 },
+    // Kosongkan Borang (sapuan bersih menurun)
+    clear:      { notes: [587.33, 493.88, 392.00, 329.63],      dur: 0.055, wave: 'triangle', vol: 0.45 },
+    // Pratonton Rekod (bunyi kamera / semakan)
+    preview:    { notes: [659.25, 987.77, 1318.51],             dur: 0.05,  wave: 'sine',     vol: 0.46 },
+    // Hantar / Simpan Berjaya (fanfare positif)
+    submit:     { notes: [523.25, 659.25, 783.99, 1046.50, 1318.51], dur: 0.065, wave: 'triangle', vol: 0.54 },
+    // Buka Akses Admin / Mod Admin Aktif (nada kunci dibuka)
+    openAdmin:  { notes: [523.25, 783.99, 1046.50, 1318.51],    dur: 0.065, wave: 'sine',     vol: 0.50 },
+    // Logout Admin (nada kunci ditutup)
+    logout:     { notes: [783.99, 587.33, 440.00, 349.23],      dur: 0.065, wave: 'triangle', vol: 0.48 },
+    // Edit rekod
+    edit:       { notes: [587.33, 783.99, 987.77],              dur: 0.05,  wave: 'sine',     vol: 0.45 },
+    // Padam / Amaran Ralat (nada rendah tegas)
+    delete:     { notes: [392.00, 311.13, 261.63],              dur: 0.075, wave: 'sawtooth', vol: 0.36 },
+    warn:       { notes: [440.00, 349.23, 293.66],              dur: 0.07,  wave: 'sawtooth', vol: 0.34 }
   };
 
   function jfMakeWav(cfg) {
@@ -1532,7 +1676,7 @@
   var _jfLastMs = 0;
   function jfPlaySound(name) {
     var now = Date.now();
-    if (now - _jfLastMs < 320) return;
+    if (now - _jfLastMs < 240) return;
     _jfLastMs = now;
 
     var cfg = JF_PROFILES[name] || JF_PROFILES.tap;
@@ -1834,6 +1978,9 @@
         var isAnon = item.kategori === 'Anonymous';
         var displayNama = isAnon ? 'Anonymous' : item.nama;
         var badgeStyle = isAnon ? 'background:var(--se-navy); color:var(--se-lime);' : '';
+        var catAccentClass = item.kategori === 'Guru Pendidikan Islam'
+          ? 'cat-pai'
+          : (item.kategori === 'Ibu Bapa' ? 'cat-ibu' : 'cat-anon');
         var cleanDate = formatCleanDate(item.tarikh);
         var starCount = parseInt(item.bintang, 10) || 5;
         var starStr = '';
@@ -1844,7 +1991,7 @@
             }).join('') + '</div>'
           : '';
         return (
-          '<div class="se-fb-card">' +
+          '<div class="se-fb-card ' + catAccentClass + '">' +
             '<div>' +
               '<div style="display:flex; justify-content:space-between; align-items:flex-start; gap:8px; margin-bottom:8px;">' +
                 '<div>' +
@@ -1857,9 +2004,9 @@
                 '</div>' +
               '</div>' +
               tagsHtml +
-              '<p style="margin:0 0 12px 0; font-size:0.86rem; color:#1E293B;">"' + escapeHtml(item.maklumBalas) + '"</p>' +
+              '<div class="se-fb-quote">"' + escapeHtml(item.maklumBalas) + '"</div>' +
             '</div>' +
-            (cleanDate ? '<div style="font-size:0.72rem; color:var(--se-muted); font-weight:700; border-top:1px solid var(--se-grey); padding-top:8px;">📅 ' + escapeHtml(cleanDate) + '</div>' : '') +
+            (cleanDate ? '<div style="font-size:0.72rem; color:var(--se-muted); font-weight:800; border-top:1.5px dashed #CBD5E1; padding-top:8px;">📅 ' + escapeHtml(cleanDate) + '</div>' : '') +
           '</div>'
         );
       }).join('');
@@ -1912,14 +2059,14 @@
         sb.addEventListener('click', function() {
           var val = parseInt(sb.getAttribute('data-star'), 10) || 5;
           setStars(val);
-          jfPlaySound('pop');
+          jfPlaySound('star');
         });
       });
 
       qtagBtns.forEach(function(qb) {
         qb.addEventListener('click', function() {
           qb.classList.toggle('active');
-          jfPlaySound('tap');
+          jfPlaySound('tag');
         });
       });
 
@@ -1944,7 +2091,7 @@
 
       if (clearBtn) {
         clearBtn.addEventListener('click', function() {
-          jfPlaySound('warn');
+          jfPlaySound('clear');
           if (cat === 'Anonymous') {
             namaEl.value = 'Anonymous';
             sekEl.value = 'Dirahsiakan';
@@ -1973,9 +2120,12 @@
 
       if (previewBtn) {
         previewBtn.addEventListener('click', function() {
-          jfPlaySound('pop');
           var valid = validateInputs();
-          if (!valid) return;
+          if (!valid) {
+            jfPlaySound('warn');
+            return;
+          }
+          jfPlaySound('preview');
           var stTxt = '';
           for (var i = 1; i <= 5; i++) stTxt += (i <= valid.bintang ? '★' : '☆');
           previewEl.innerHTML =
@@ -2057,13 +2207,14 @@
           document.getElementById('se-cat-none').checked = true;
           document.getElementById('se-tab-records').checked = true;
           renderAllViews();
-          jfPlaySound('success');
+          jfPlaySound('submit');
           showToast('🎉 Terima kasih! Maklum balas & penarafan bintang anda berjaya direkodkan.');
         });
       }
     });
   }
 
+  // KEMAS KINI WARNA & STATUS MOD ADMIN (HIJAU BILA BUKA, MERAH BILA TUTUP)
   function setAdminUiState() {
     var isLoggedIn = Boolean(adminToken);
     var lockedBox = document.getElementById('seAdminLockedBox');
@@ -2073,7 +2224,15 @@
 
     if (lockedBox) lockedBox.style.display = isLoggedIn ? 'none' : 'block';
     if (unlockedArea) unlockedArea.style.display = isLoggedIn ? 'block' : 'none';
-    if (badge) badge.style.display = isLoggedIn ? 'inline-block' : 'none';
+    if (badge) {
+      if (isLoggedIn) {
+        badge.className = 'se-admin-badge-pill se-admin-badge-open';
+        badge.innerHTML = '🟢 Mod Admin Aktif';
+      } else {
+        badge.className = 'se-admin-badge-pill se-admin-badge-closed';
+        badge.innerHTML = '🔴 Mod Admin Tutup';
+      }
+    }
     if (headerBtn) {
       headerBtn.innerHTML = isLoggedIn ? '🛡️ Admin Dashboard' : '🔒 Admin Login';
     }
@@ -2111,6 +2270,7 @@
     var pass = (inp.value || '').trim();
 
     if (!pass) {
+      jfPlaySound('warn');
       err.textContent = '⚠️ Sila masukkan kata laluan admin.';
       err.style.display = 'block';
       return;
@@ -2149,8 +2309,8 @@
       closeLoginModal();
       document.getElementById('se-tab-admin').checked = true;
       setAdminUiState();
-      jfPlaySound('success');
-      showToast('✅ Pengesahan Berjaya! Selamat datang ke Admin Dashboard SolatEdu.');
+      jfPlaySound('submit');
+      showToast('✅ Pengesahan Berjaya! Mod Admin kini aktif.');
       syncFromGoogleSheets(true);
     } else {
       jfPlaySound('warn');
@@ -2209,8 +2369,8 @@
             '<div style="font-size:0.7rem; color:var(--se-muted); font-weight:800;">ID: ' + escapeHtml(r.id) + ' • 📅 ' + escapeHtml(r.tarikh) + ' (' + escapeHtml(r.masa) + ')</div>' +
           '</div>' +
           '<div style="display:flex; gap:6px;">' +
-            '<button type="button" class="se-jf-btn se-btn-outline se-btn-sm se-adm-edit-btn" data-id="' + escapeHtml(r.id) + '">✏️ Edit</button>' +
-            '<button type="button" class="se-jf-btn se-btn-danger se-btn-sm se-adm-del-btn" data-id="' + escapeHtml(r.id) + '">🗑️ Padam</button>' +
+            '<button type="button" data-sound="edit" class="se-jf-btn se-btn-outline se-btn-sm se-adm-edit-btn" data-id="' + escapeHtml(r.id) + '">✏️ Edit</button>' +
+            '<button type="button" data-sound="warn" class="se-jf-btn se-btn-danger se-btn-sm se-adm-del-btn" data-id="' + escapeHtml(r.id) + '">🗑️ Padam</button>' +
           '</div>' +
         '</div>'
       );
@@ -2227,6 +2387,8 @@
     document.getElementById('seRootApp').addEventListener('pointerdown', function(e) {
       var target = e.target.closest('[data-sound], .se-jf-btn, .se-nav-tab, .se-cat-card, .se-side-link, .se-page-btn, .se-flt-chip');
       if (!target) return;
+      // Elak bunyi bertindih pada butang yang mempunyai logik pengesahan tersuai
+      if (target.classList.contains('se-btn-preview') || target.classList.contains('se-btn-submit') || target.id === 'seConfirmLoginBtn' || target.id === 'sePrivSaveBtn') return;
       var sProfile = target.getAttribute('data-sound') || 'tap';
       jfPlaySound(sProfile);
     });
@@ -2270,7 +2432,8 @@
       try { sessionStorage.removeItem(STORAGE_TOKEN_KEY); } catch (e) {}
       setAdminUiState();
       document.getElementById('se-tab-home').checked = true;
-      showToast('👋 Anda telah log keluar daripada Mod Admin.');
+      jfPlaySound('logout');
+      showToast('🔴 Mod Admin ditutup. Anda telah log keluar.');
     });
 
     document.querySelectorAll('.se-side-link[data-adm-view]').forEach(function(btn) {
@@ -2287,6 +2450,7 @@
       var sek = (document.getElementById('sePrivSekolah').value || '').trim() || 'SolatEdu HQ';
       var msg = (document.getElementById('sePrivMsg').value || '').trim();
       if (msg.length < 5) {
+        jfPlaySound('warn');
         showToast('⚠️ Sila masukkan catatan peribadi sekurang-kurangnya 5 aksara.', true);
         return;
       }
@@ -2322,7 +2486,7 @@
 
       document.getElementById('sePrivMsg').value = '';
       renderAdminDashboard();
-      jfPlaySound('success');
+      jfPlaySound('submit');
       showToast('🔐 Catatan peribadi "Saya Sendiri" berjaya disimpan!');
     });
 
@@ -2382,7 +2546,7 @@
 
       document.getElementById('seEditModalOverlay').classList.remove('open');
       renderAllViews();
-      jfPlaySound('success');
+      jfPlaySound('submit');
       showToast('✅ Rekod berjaya dikemas kini!');
     });
 
@@ -2404,7 +2568,7 @@
 
       document.getElementById('seDeleteModalOverlay').classList.remove('open');
       renderAllViews();
-      jfPlaySound('warn');
+      jfPlaySound('delete');
       showToast('🗑️ Rekod telah dipadam.');
     });
 
